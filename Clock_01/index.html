@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clock</title>
+
+        <!-- styles -->
+        <link href="style/main.css" rel="stylesheet">
+    </head>
+    <body>
+        <canvas id="clock" width="400" height="300"></canvas>
+
+        <!-- callout -->
+        <div class="callout">
+            <a href="http://dribbble.com/shots/1037595-Watch" class="dribbble">
+                Watch by Aaron Cui
+            </a>
+        </div>
+
+        <!-- scripts -->
+        <script src="script/lib/createjs.min.js"></script>
+        <script src="script/app/main.js"></script>
+        <script>
+            window.clock.initialize();
+            window.clock.startRender();
+        </script>
+    </body>
+</html>
