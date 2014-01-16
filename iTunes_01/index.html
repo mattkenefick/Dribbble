@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>iTunes Popover Freebie | Dribbble Build</title>
+        <link rel="shortcut icon" href="http://www.mattkenefick.com/favicon.png" />
+
+        <style>
+body {
+    color: #555;
+    font: 13px/1.2 "freight-sans-pro", "Helvetica", Arial, sans-serif;
+}
+.dribbble {
+    background: url('dribbble.png') center top no-repeat;
+    bottom: 20px;
+    color: black;
+    height: 20px;
+    padding-top: 70px;
+    position: fixed;
+    right: 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+}
+.notes {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.menu-wrapper {
+    position: absolute;
+    font-weight: 600;
+}
+.menu-wrapper:after, .menu-wrapper:before {
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    right: 100%;
+    position: absolute;
+    pointer-events: none;
+    width: 0;
+}
+.menu-wrapper:after {
+    border-width: 12px;
+    border-right-color: #f0f0f0;
+    margin-right: -2px;
+    top: 15px;
+    z-index: 20;
+}
+.menu-wrapper:before {
+    z-index: 9;
+    border-width: 17px;
+    border-right-color: #a6a09e;
+    top: 10px;
+    margin-right: -6px;
+}
+ul {
+    background: #f0f0f0;
+    border: 1px solid #a6a09e;
+    border-radius: 5px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.2), 1px 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 200px;
+    z-index: 11;
+}
+ul > li {
+    border: 1px solid transparent;
+    line-height: 25px;
+    padding: 0 5px;
+    position: relative;
+}
+ul > li:hover {
+    background: #8ba8ca;
+    border: 1px solid #849dbc;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 4px #849dbc;
+    cursor: pointer;
+}
+ul > li:hover > span {
+    color: white;
+}
+ul > li ul {
+    display: none;
+    left: 100%;
+    position: absolute;
+    top: 0;
+}
+ul > li:hover ul {
+    display: block;
+}
+.menu li icon {
+    position: absolute;
+    background: url('sprites.png');
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    margin-top: 6px;
+    border-radius: 16px;
+}
+ul > li:hover > icon {
+    background: url('sprites-hover.png');
+}
+.menu li icon.pull-right {
+    position: absolute;
+    right: 0;
+}
+.menu li icon.plus     { background-position: 0 0; }
+.menu li icon.genius   { background-position: -16px 0; }
+.menu li icon.list     { background-position: -32px 0; }
+.menu li icon.list-add { background-position: -48px 0; }
+.menu li icon.artist   { background-position: -64px 0; }
+.menu li icon.album    { background-position: -80px 0; }
+.menu li icon.store    { background-position: -96px 0; }
+.menu li icon.arrow    { background-position: -112px 0; }
+.menu li span {
+    display: block;
+    padding-left: 25px;
+}
+.menu li.divider {
+    height: 7px;
+    overflow: hidden;
+    pointer-events: none;
+}
+.menu li hr {
+    background: #f0f0f0; /* Old browsers */
+    background: -moz-linear-gradient(left, #f0f0f0 0%, #ccc 48%, #f0f0f0 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f0f0f0), color-stop(48%,#ccc), color-stop(100%,#f0f0f0)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #f0f0f0 0%,#ccc 48%,#f0f0f0 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #f0f0f0 0%,#ccc 48%,#f0f0f0 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #f0f0f0 0%,#ccc 48%,#f0f0f0 100%); /* IE10+ */
+    background: linear-gradient(to right, #f0f0f0 0%,#ccc 48%,#f0f0f0 100%); /* W3C */
+    border: 0;
+    height: 1px;
+    margin: 3px 0;
+}
+        </style>
+    </head>
+    <body>
+        <a href="http://dribbble.com/shots/943177-iTunes-Popover-Freebie" class="dribbble" target="_blank">iTunes Popover</a>
+
+        <div class="notes">
+            <p>Right click to get menu again.</p>
+            <p>Doesn&rsquo;t use Helvetica Neue.</p>
+        </div>
+
+        <div class="menu-wrapper">
+            <ul class="menu">
+                <li>
+                    <icon class="plus"></icon>
+                    <span>Add to Up Next</span>
+                </li>
+                <li class="divider"><hr></li>
+                <li>
+                    <icon class="genius"></icon>
+                    <span>Start Genius</span>
+                </li>
+                <li>
+                    <icon class="genius"></icon>
+                    <span>Create Genius Playlist</span>
+                </li>
+                <li>
+                    <icon class="list"></icon>
+                    <icon class="arrow pull-right"></icon>
+                    <span>Genius Suggestions</span>
+                    <ul>
+                        <li>
+                            <icon class="list"></icon> <span>My Favorite List</span>
+                        </li>
+                        <li>
+                            <icon class="list"></icon> <span>Something suggested by genius</span>
+                        </li>
+                        <li>
+                            <icon class="list"></icon> <span>List #3</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"><hr></li>
+                <li>
+                    <icon class="list-add"></icon>
+                    <icon class="arrow pull-right"></icon>
+                    <span>Add to</span>
+                    <ul>
+                        <li>
+                            <icon class="list"></icon> <span>My non-metal list</span>
+                        </li>
+                        <li>
+                            <icon class="list"></icon> <span>Funeral for a Friend</span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="divider"><hr></li>
+                <li>
+                    <icon class="artist"></icon>
+                    <span>Go to &ldquo;Funeral for a Friend&rdquo;</span>
+                </li>
+                <li>
+                    <icon class="album"></icon>
+                    <span>Go to &ldquo;Hours&rdquo;</span>
+                </li>
+                <li>
+                    <icon class="store"></icon>
+                    <span>Show in iTunes Store</span>
+                </li>
+            </ul>
+        </div>
+
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script>
+//$('.menu-wrapper').hide();
+
+$(document).on('contextmenu', function(e) {
+    $('.menu-wrapper').css({
+        top: e.pageY - 30,
+        left: e.pageX + 13
+    }).fadeIn();
+
+    e.preventDefault();
+    e.stopPropagation();
+});
+
+$(document).on('click', function() {
+    $('.menu-wrapper').hide();
+});
+        </script>
+    </body>
+</html>
